@@ -1,0 +1,201 @@
+/* ---------------------------------------------------- */
+/* 1. リセットや基本設定                                 */
+/* ---------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 全体の背景色を淡い水色寄りに */
+body {
+  font-family: "Istok Web", sans-serif;
+  color: #333;
+  background: #f5fcfc; /* お好みで微調整: #f0fcfc, #e8fbfb など */
+  line-height: 1.6;
+  /* 固定ヘッダー分の上余白を確保（必要に応じて調整） */
+  padding-top: 80px;
+}
+
+/* ---------------------------------------------------- */
+/* 2. ヘッダー部分                                       */
+/* ---------------------------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  /* 白～淡い水色のグラデーション */
+  background: linear-gradient(135deg, #ffffff 0%, #d8ffff 100%);
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 10px 0 15px 0;
+  border-bottom: 1px solid #b2f0f0; /* 淡いライン */
+}
+
+/* タイトル */
+.header h1 {
+  font-family: "Montserrat", sans-serif; /* かっこいい太めフォント */
+  font-size: 2.4rem;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+/* Smart, CV, Dashの色分け */
+.smart {
+  color: #008b8b; /* 海っぽい水色系 */
+}
+.dash {
+  color: #008b8b;
+  margin: 0 4px;
+}
+.cv {
+  color: #00b7b7; /* さらに明るいアクア系 */
+}
+
+/* サブタイトル */
+.subtitle {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+  line-height: 1.4;
+  margin: 0 10px;
+}
+
+/* ---------------------------------------------------- */
+/* 3. メインコンテンツ                                   */
+/* ---------------------------------------------------- */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+/* カラム */
+.column {
+  text-align: center;
+  width: 250px; /* 必要に応じて調整 */
+}
+
+/* カラムのタイトル */
+.column h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #006666; /* 見出しを少し濃いめの水色 */
+  font-weight: bold;
+  position: relative;
+}
+
+/* 画像 */
+.column img {
+  max-width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: 2px solid #b2f0f0; /* ほんのり水色の枠 */
+}
+
+/* 画像ホバー時のアニメーション */
+.column img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------------------------------------------- */
+/* 4. 下部の説明ボックス                                 */
+/* ---------------------------------------------------- */
+.bottom-box {
+  max-width: 800px;
+  margin: 60px auto 20px auto;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #ffffff 0%, #d8ffff 100%);
+  border: 1px solid #b2f0f0;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* bottom-box 内のテキスト */
+.bottom-box p {
+  margin-bottom: 16px;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* 強調文字（最短３０秒） */
+.emphasis {
+  color: #5175ea; /* ここだけあえて赤系で強調 */
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* 呼びかけ部分 */
+.cta {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #008080; /* 濃いめのターコイズ */
+}
+
+/* 注意書き */
+.keikoku {
+  font-size: 1rem;
+  margin-top: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #555;
+}
+
+/* スマホ等でタイトルを改行させるためのクラス */
+.sp-br {
+  display: none;
+}
+
+/* ---------------------------------------------------- */
+/* 5. レスポンシブ対応（768px以下）                      */
+/* ---------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* ヘッダーのタイトルサイズ調整 */
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  /* 小さい画面で改行を有効にする */
+  .sp-br {
+    display: inline;
+  }
+
+  /* カラムを縦並びに */
+  .content {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .column {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .bottom-box {
+    width: 90%;
+    margin: 40px auto 20px auto;
+  }
+
+  .emphasis {
+    font-size: 1.2rem;
+  }
+}
