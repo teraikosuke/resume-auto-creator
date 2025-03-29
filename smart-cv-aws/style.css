@@ -484,6 +484,7 @@ tr.name-table td.name-value-left {
   border-collapse: separate;
   margin-top: 3%;
   table-layout: fixed;
+  border-spacing: 0;
 }
 td.birthday-label {
   width: 19.5%;
